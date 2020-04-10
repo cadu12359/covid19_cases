@@ -137,9 +137,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Covid19-Cases\Covid19-Cases.csproj">
-      <Project>{21A23E05-5D45-4A4E-8D91-36597FC449F1}</Project>
-      <Name>Covid19-Cases</Name>
+    <ProjectReference Include="..\Covid19-Cases\Covid19_Cases.csproj">
+      <Project>{9343F386-97B3-44CC-AC02-B3782D624731}</Project>
+      <Name>Covid19_Cases</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -8,8 +8,9 @@
              Title="{Binding Title}"
              x:Name="BrowseItemsPage">
 
-    <StackLayout>
+    <StackLayout Margin="0, 20, 0, 10">
         <Label Text="Casos de Corona Vírus" FontSize="20" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+        <Label Text="{Binding Item.country}" FontSize="20" HorizontalOptions="CenterAndExpand"/>
     </StackLayout>
     
 </ContentPage>

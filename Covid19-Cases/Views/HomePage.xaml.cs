@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using Covid19_Cases.Models;
 using Covid19_Cases.Views;
 using Covid19_Cases.ViewModels;
+using Covid19_Cases.Services;
 
 namespace Covid19_Cases.Views
 {
@@ -19,32 +20,28 @@ namespace Covid19_Cases.Views
     public partial class HomePage : ContentPage
     {
         HomeViewModel viewModel;
+        RequestItem requestItem;
 
         public HomePage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new HomeViewModel();
+            requestItem = APiService.GetData("Brazil");
+
+            if (!string.IsNullOrEmpty(requestItem.country))
+            {
+                BindingContext = viewModel = new HomeViewModel(requestItem);
+            }
+            else
+            {
+                BindingContext = viewModel = new HomeViewModel();
+            }
         }
 
-        async void OnItemSelected(object sender, EventArgs args)
-        {
-            var layout = (BindableObject)sender;
-            var item = (Item)layout.BindingContext;
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-        }
-
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            if (viewModel.Items.Count == 0)
-                viewModel.IsBusy = true;
         }
     }
 }

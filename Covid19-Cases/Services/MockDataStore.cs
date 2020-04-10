@@ -4,10 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Covid19_Cases.Models;
 
+/*
 namespace Covid19_Cases.Services
 {
+    
     public class MockDataStore : IDataStore<Item>
     {
+        
         readonly List<Item> items;
 
         public MockDataStore()
@@ -58,3 +61,4 @@ namespace Covid19_Cases.Services
         }
     }
 }
+*/

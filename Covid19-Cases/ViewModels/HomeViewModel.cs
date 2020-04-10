@@ -12,45 +12,23 @@ namespace Covid19_Cases.ViewModels
 {
     public class HomeViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
-
         public HomeViewModel()
         {
             Title = "Casos Corona Vírus";
-            Items = new ObservableCollection<Item>();
-            //LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
         }
 
-
-
-
-
-
-
-        /*
-        async Task ExecuteLoadItemsCommand()
+        public HomeViewModel(RequestItem _requestItem)
         {
-            IsBusy = true;
-
-            try
-            {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
-                {
-                    Items.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+            Title = "Casos Corona Vírus";
+            item = _requestItem;
         }
-        */
+
+        RequestItem item = new RequestItem();
+        public RequestItem Item
+        {
+            get { return item; }
+            set { SetProperty(ref item, value); }
+        }
+
     }
 }

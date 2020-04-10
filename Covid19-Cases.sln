@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19-Cases.Android", "Covid19-Cases.Android\Covid19-Cases.Android.csproj", "{D9594155-AD59-408B-BD9D-D7C53E8759F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19_Cases.Android", "Covid19-Cases.Android\Covid19_Cases.Android.csproj", "{D9594155-AD59-408B-BD9D-D7C53E8759F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19-Cases.iOS", "Covid19-Cases.iOS\Covid19-Cases.iOS.csproj", "{D949FE89-15D4-487E-8E20-EE28911022BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19_Cases.iOS", "Covid19-Cases.iOS\Covid19_Cases.iOS.csproj", "{D949FE89-15D4-487E-8E20-EE28911022BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covid19-Cases", "Covid19-Cases\Covid19-Cases.csproj", "{9343F386-97B3-44CC-AC02-B3782D624731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Covid19_Cases", "Covid19-Cases\Covid19_Cases.csproj", "{9343F386-97B3-44CC-AC02-B3782D624731}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
