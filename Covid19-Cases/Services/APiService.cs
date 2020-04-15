@@ -2,8 +2,10 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,7 +41,34 @@ namespace Covid19_Cases.Services
 
         }
 
+        public static List<Country> GetDataCountry()
+        {
+            try
+            {
 
+                var assembly = typeof(APiService).GetTypeInfo().Assembly;
+                Stream stream = assembly.GetManifestResourceStream("Covid19_Cases.Services.countries.json");
+
+                using (var reader = new System.IO.StreamReader(stream))
+                {
+                    var json = reader.ReadToEnd();
+
+                    List<Country> mylist = JsonConvert.DeserializeObject<List<Country>>(json);
+
+                    return mylist;
+                }
+
+            }
+            catch (TaskCanceledException e)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+        }
 
     }
 }

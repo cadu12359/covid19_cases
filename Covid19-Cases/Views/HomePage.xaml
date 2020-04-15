@@ -3,14 +3,89 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
              mc:Ignorable="d"
              x:Class="Covid19_Cases.Views.HomePage"
              Title="{Binding Title}"
-             x:Name="BrowseItemsPage">
+             x:Name="BrowseItemsPage"
+             BackgroundColor="#A6ABAB">
 
-    <StackLayout Margin="0, 20, 0, 10">
-        <Label Text="Casos de Corona Vírus" FontSize="20" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
-        <Label Text="{Binding Item.country}" FontSize="20" HorizontalOptions="CenterAndExpand"/>
+    <StackLayout>
+
+        <pancake:PancakeView BackgroundColor="White"
+                     CornerRadius="0, 0, 15, 15"
+                     HorizontalOptions="FillAndExpand"
+                     HeightRequest="120"
+                             >
+
+            <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <Label Text="Casos de COVID-19" FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                <Label Text="{Binding Item.country}" FontSize="20" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+        </pancake:PancakeView>
+
+        <StackLayout>
+            <!-- XfxComboBox-->
+            <xfx:XfxComboBox                
+                 Placeholder="Select make"
+                 SelectedItem="{Binding SelectedVehicleMake}"
+                 Text="{Binding Description}"
+                 ItemsSource="{Binding AssetMakes}"/>
+        </StackLayout>
+
+
+        <pancake:PancakeView BackgroundColor="White"
+                     CornerRadius="15"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                             Margin="20">
+
+            <StackLayout>
+                <StackLayout Margin="0, 30, 0, 10" Orientation="Vertical">
+                    <Label Text="Confirmados" FontSize="20" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Total_Casos}" FontAttributes="Bold" FontSize="20" TextColor="Blue"  VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"/>
+                            <ColumnDefinition Width="50*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackLayout Margin="20" Orientation="Vertical" Grid.Row="0" Grid.Column="0">
+                            <Label Text="Novos Casos" FontSize="20" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding New_Cases}" FontAttributes="Bold" FontSize="20" TextColor="Blue"  VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Margin="20" Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                            <Label Text="Recuperados" FontSize="20" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding Total_Recovered}" FontAttributes="Bold" FontSize="20" TextColor="Green"  VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Margin="20" Orientation="Vertical" Grid.Row="1" Grid.Column="0">
+                            <Label Text="Mortes" FontSize="20" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding Total_Deaths}" FontAttributes="Bold" FontSize="20" TextColor="Red"  VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+
+                        <StackLayout Margin="20" Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+                            <Label Text="Novas Mortes" FontSize="20" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding New_Deaths}" FontAttributes="Bold" FontSize="20" TextColor="Orange"  VerticalOptions="Start" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+
+        </pancake:PancakeView>
     </StackLayout>
-    
+
 </ContentPage>

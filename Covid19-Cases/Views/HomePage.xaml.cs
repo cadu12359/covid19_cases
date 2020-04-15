@@ -27,6 +27,7 @@ namespace Covid19_Cases.Views
             InitializeComponent();
 
             requestItem = APiService.GetData("Brazil");
+            var requestItem1 = APiService.GetDataCountry();
 
             if (!string.IsNullOrEmpty(requestItem.country))
             {
