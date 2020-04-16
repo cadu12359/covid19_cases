@@ -10,7 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="countries.json" />
+    <EmbeddedResource Include="countries.json">
+      <CustomToolNamespace>Covid19_Cases.Services.countries.json</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

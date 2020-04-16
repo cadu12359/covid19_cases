@@ -6,12 +6,12 @@ namespace Covid19_Cases.Models
     {
         public int id { get; set; }
         public string country_name { get; set; }
-        public float total_cases { get; set; }
-        public int new_cases { get; set; }
-        public float active_cases { get; set; }
-        public float total_deaths { get; set; }
-        public float new_deaths { get; set; }
-        public float total_recovered { get; set; }
-        public float serious_critical { get; set; }
+        public string total_cases { get; set; }
+        public string new_cases { get; set; }
+        public string active_cases { get; set; }
+        public string total_deaths { get; set; }
+        public string new_deaths { get; set; }
+        public string total_recovered { get; set; }
+        public string serious_critical { get; set; }
     }
 }

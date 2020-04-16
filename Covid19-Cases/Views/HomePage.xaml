@@ -9,38 +9,32 @@
              x:Class="Covid19_Cases.Views.HomePage"
              Title="{Binding Title}"
              x:Name="BrowseItemsPage"
-             BackgroundColor="#A6ABAB">
+             BackgroundColor="MediumSlateBlue">
 
     <StackLayout>
 
-        <pancake:PancakeView BackgroundColor="White"
-                     CornerRadius="0, 0, 15, 15"
-                     HorizontalOptions="FillAndExpand"
-                     HeightRequest="120"
-                             >
-
-            <StackLayout Orientation="Vertical" VerticalOptions="Center">
-                <Label Text="Casos de COVID-19" FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
-                <Label Text="{Binding Item.country}" FontSize="20" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
-            </StackLayout>
-
-        </pancake:PancakeView>
-
-        <StackLayout>
-            <!-- XfxComboBox-->
-            <xfx:XfxComboBox                
-                 Placeholder="Select make"
-                 SelectedItem="{Binding SelectedVehicleMake}"
-                 Text="{Binding Description}"
-                 ItemsSource="{Binding AssetMakes}"/>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="20">
+            <Label Text="Casos de COVID-19" FontSize="20" TextColor="Black" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding Item.country}" FontSize="20" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="País" FontSize="20"/>
+                <Picker x:Name="PICKER" WidthRequest="200" ItemsSource="{Binding ListCountry}" ItemDisplayBinding="{Binding name}" 
+                        SelectedIndexChanged="OnPickerSelectedIndexChanged"
+                        SelectedIndex="30"
+                        Visual="Default"
+                        >
+                </Picker>
+            </StackLayout>
 
 
         <pancake:PancakeView BackgroundColor="White"
                      CornerRadius="15"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
-                             Margin="20">
+                             Margin="20"
+                             HasShadow="True">
 
             <StackLayout>
                 <StackLayout Margin="0, 30, 0, 10" Orientation="Vertical">

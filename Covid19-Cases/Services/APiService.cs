@@ -13,7 +13,7 @@ namespace Covid19_Cases.Services
 {
     public class APiService
     {
-        public static RequestItem GetData(string country)
+        public async static Task<RequestItem> GetData(string country)
         {
             var URL = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php";
 
@@ -26,6 +26,7 @@ namespace Covid19_Cases.Services
                 HttpResponseMessage resposta = requisicao.GetAsync(URL + "?country=" + country).GetAwaiter().GetResult();
 
                 var data = resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                
                 RequestItem data_country = JsonConvert.DeserializeObject<RequestItem>(data);
 
                 return data_country;
@@ -41,13 +42,13 @@ namespace Covid19_Cases.Services
 
         }
 
-        public static List<Country> GetDataCountry()
+        public async static Task<List<Country>> GetDataCountry()
         {
             try
             {
 
                 var assembly = typeof(APiService).GetTypeInfo().Assembly;
-                Stream stream = assembly.GetManifestResourceStream("Covid19_Cases.Services.countries.json");
+                Stream stream = assembly.GetManifestResourceStream("Covid19_Cases.countries.json");
 
                 using (var reader = new System.IO.StreamReader(stream))
                 {
