@@ -48,7 +48,7 @@ namespace Covid19_Cases.ViewModels
             {
                 if (string.IsNullOrEmpty(item.latest_stat_by_country[0].total_cases))
                 {
-                    return "Não Informado";
+                    return "N";
                 }
 
                 return item.latest_stat_by_country[0].total_cases + "";
@@ -64,7 +64,7 @@ namespace Covid19_Cases.ViewModels
             {
                 if (string.IsNullOrEmpty(item.latest_stat_by_country[0].total_deaths))
                 {
-                    return "Não Informado";
+                    return "N";
                 }
 
                 return item.latest_stat_by_country[0].total_deaths + "";
@@ -79,7 +79,7 @@ namespace Covid19_Cases.ViewModels
             {
                 if (string.IsNullOrEmpty(item.latest_stat_by_country[0].new_cases))
                 {
-                    return "Não Informado";
+                    return "N";
                 }
 
                 return item.latest_stat_by_country[0].new_cases + "";
@@ -94,7 +94,7 @@ namespace Covid19_Cases.ViewModels
             {
                 if (string.IsNullOrEmpty(item.latest_stat_by_country[0].total_recovered))
                 {
-                    return "Não Informado";
+                    return "N";
                 }
 
                 return item.latest_stat_by_country[0].total_recovered + "";
@@ -109,7 +109,7 @@ namespace Covid19_Cases.ViewModels
             {
                 if (string.IsNullOrEmpty(item.latest_stat_by_country[0].new_deaths))
                 {
-                    return "Não Informado";
+                    return "N";
                 }
 
                 return item.latest_stat_by_country[0].new_deaths + "";

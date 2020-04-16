@@ -16,7 +16,7 @@
         <ResourceDictionary>
             <Color x:Key="NavigationPrimary">#2196F3</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="#0029FA" />
+                <Setter Property="Shell.BackgroundColor" Value="MediumSlateBlue" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
                 <Setter Property="Shell.TitleColor" Value="White" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />

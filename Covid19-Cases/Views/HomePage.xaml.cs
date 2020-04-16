@@ -55,7 +55,12 @@ namespace Covid19_Cases.Views
 
             requestItem = APiService.GetData(selectedItem.name).GetAwaiter().GetResult();
 
-            if (!string.IsNullOrEmpty(requestItem.country))
+            if (requestItem.latest_stat_by_country.Count == 0)
+            {
+                DisplayAlert("Atenção", "Não foi encotrado resultados para este país.", "OK");
+            }
+
+            if (!string.IsNullOrEmpty(requestItem.country) && requestItem.latest_stat_by_country.Count>0)
             {
                 BindingContext = viewModel = new HomeViewModel(requestItem, listCountry);
             }
