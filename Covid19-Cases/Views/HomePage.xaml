@@ -30,9 +30,16 @@
                              HasShadow="True">
 
                 <StackLayout>
-                    <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="20">
-                        <Label Text="Casos de COVID-19" FontSize="18" TextColor="Black" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
-                        <Label Text="{Binding Item.country}" FontSize="16" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout HorizontalOptions="Start">
+                            <Image Source="image_corona.jpg" HeightRequest="50" WidthRequest="50" Margin="10, 10, 15, 0"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" Margin="30, 15, 15, 10">
+                            <Label Text="Casos de COVID-19" FontSize="18" FontAttributes="Bold" TextColor="Black" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+                            <Label Text="{Binding Item.country}" FontAttributes="Bold" FontSize="16" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
